@@ -4,7 +4,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 const loading = <div>화면을 불러오는 중 입니다.</div>
 
 // Containers
-const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'))
+const DefaultLayout = React.lazy(() => import('./pages/home/Home'))
 
 // Pages
 const Page404 = React.lazy(() => import('./pages/page404/Page404'))
