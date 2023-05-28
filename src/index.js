@@ -4,7 +4,7 @@ import { createRoot } from "react-dom/client";
 import "@cloudscape-design/global-styles/index.css";
 
 import "./styles.css";
-import App from "./app";
+import App from "./App";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);

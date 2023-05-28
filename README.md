@@ -48,7 +48,7 @@ npm run start
 | ├── pages/
 | | ├── home/
 | ├── utils/
-| ├── app.js
+| ├── App.js
 | ├── index.js
 | └── routes.js
 ├── .gitignore/
@@ -112,7 +112,7 @@ npm run start
 
 > src > 그밖의 파일들
 ```
-- app.js : (설명이 들어갑니다.)
+- App.js : (설명이 들어갑니다.)
 - index.js : (document.getElementById를 사용하여 id가 root인 HTML 요소를 찾고 ( public/index.html 
               App 구성 요소를 렌더링 하고 있다.
 - routes.js : (설명이 들어갑니다.)
