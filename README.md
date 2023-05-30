@@ -48,9 +48,9 @@ npm run start
 | ├── pages/
 | | ├── home/
 | ├── utils/
-| ├── App.js
-| ├── index.js
-| └── routes.js
+| ├── App.tsx
+| ├── index.tsx
+| └── routes.tsx
 ├── .gitignore/
 ├── package.json
 └── README.md
@@ -61,7 +61,7 @@ npm run start
 > src > components 폴더
 ```
 
-< (styled.js) >
+< (styled.tsx) >
 
 (전체 어플리케이션에 적용될 스타일을 설정합니다.)
 
@@ -72,7 +72,7 @@ npm run start
 > src > layout 폴더
 ```
 
-< DefaultLayout.js >
+< DefaultLayout.tsx >
 
 (공통 템플릿 소스를 보관하는 곳)
 
@@ -102,7 +102,7 @@ npm run start
 > src > utils 폴더
 ```
 
-< (utils/utility.mjs) >
+< (utils/utility.tsx) >
 
 (형식적 validation 처리 문)
 
@@ -112,10 +112,10 @@ npm run start
 
 > src > 그밖의 파일들
 ```
-- App.js : (설명이 들어갑니다.)
-- index.js : (document.getElementById를 사용하여 id가 root인 HTML 요소를 찾고 ( public/index.html 
+- App.tsx : (설명이 들어갑니다.)
+- index.tsx : (document.getElementById를 사용하여 id가 root인 HTML 요소를 찾고 ( public/index.html 
               App 구성 요소를 렌더링 하고 있다.
-- routes.js : (설명이 들어갑니다.)
+- routes.tsx : (설명이 들어갑니다.)
 
 ```
 

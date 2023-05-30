@@ -1,7 +1,9 @@
 import React, {Suspense} from 'react'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
-const loading = <div>화면을 불러오는 중 입니다.</div>
+// const loading = <div>화면을 불러오는 중 입니다.</div>
+const loading = React.createElement('div', null, '화면을 불러오는 중 입니다.');
+
 
 // Containers
 const DefaultLayout = React.lazy(() => import('./pages/home/Home'))
@@ -11,14 +13,13 @@ const Page404 = React.lazy(() => import('./pages/page404/Page404'))
 const Page500 = React.lazy(() => import('./pages/page500/Page500'))
 
 //컴포넌트
-const App = () => {
-    return (
+const App: React.FC = () => {    return (
         <BrowserRouter>
             <Suspense fallback={loading}>
                 <Routes>
-                    <Route exact path='/404' name='Page 404' element={<Page404 />} />
-                    <Route exact path='/500' name='Page 500' element={<Page500 />} />
-                    <Route exact path='/*' name='Home' element={<DefaultLayout />} />
+                    <Route path="/404" element={<Page404 />} />
+                    <Route path="/500" element={<Page500 />} />
+                    <Route path="/*" element={<DefaultLayout />} />
                 </Routes>
             </Suspense>
         </BrowserRouter>

@@ -8,10 +8,13 @@ import {
     Link,
     SpaceBetween
 } from "@cloudscape-design/components";
-import {useState} from "react";
+import * as React from 'react';
+
 
 const DefaultLayout = () => {
-    const [value, setValue] = useState("");
+
+    const [value, setValue] = React.useState<string>("");
+
     return (
 
         <AppLayout

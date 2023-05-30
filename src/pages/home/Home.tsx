@@ -7,11 +7,19 @@ import Header from "@cloudscape-design/components/header";
 import Pagination from "@cloudscape-design/components/pagination";
 import CollectionPreferences from "@cloudscape-design/components/collection-preferences";
 
-export default () => {
+interface Item {
+    name: string;
+    alt: string;
+    description: string;
+    type: string;
+    size: string;
+}
+
+const tableComponent: React.FC = () => {
     const [
         selectedItems,
         setSelectedItems
-    ] = React.useState([{ name: "Item 2" }]);
+    ] = React.useState<Item[]>([{ name: "Item 2", alt: "", description: "", type: "", size: "" }]);
     return (
         <Table
             onSelectionChange={({ detail }) =>
@@ -253,3 +261,5 @@ export default () => {
         />
     );
 }
+
+export default tableComponent;
