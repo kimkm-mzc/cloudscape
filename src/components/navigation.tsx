@@ -3,7 +3,8 @@ import SideNavigation, { SideNavigationProps } from '@cloudscape-design/componen
 
 const items: SideNavigationProps['items'] = [
     // More pages got added as part of the workshop.
-    { type: 'link', text: 'Table', href: '/index.html' },
+    { type: 'link', text: 'Dashboard', href: '/home' },
+    { type: 'link', text: 'Flavors', href: '/flavors' },
 ];
 
 export default function Navigation() {

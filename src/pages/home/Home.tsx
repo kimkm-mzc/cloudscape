@@ -6,47 +6,41 @@ import TextFilter from "@cloudscape-design/components/text-filter";
 import Header from "@cloudscape-design/components/header";
 import Pagination from "@cloudscape-design/components/pagination";
 import CollectionPreferences from "@cloudscape-design/components/collection-preferences";
-import {AppLayout, ContentLayout, TopNavigation } from "@cloudscape-design/components";
+import {AppLayout, ColumnLayout, Container, ContentLayout, Grid, HelpPanel, Link, SpaceBetween, TopNavigation } from "@cloudscape-design/components";
 
 import Navigation from '../../components/navigation'
 import Breadcrumbs from '../../components/breadcrumbs';
 
 // import PreparedDashboardContent from './components/production-overview';
-import PreparedDashboardContent from './components/prepared-dashboard-content'
+import PreparedDashboardContent from './components/production-overview'
+import QuilityReport from './components/quality-report/index'
+import Flavors from './components/flavors'
+import QualityReport from "./components/quality-report/index";
+import ProductionOverview from "./components/production-overview";
+import {breakdownItems, notes, productionMetrics, quote, variationData } from "./data";
+import Shell from "../../layouts/shell";
 
-interface Item {
-    name: string;
-    alt: string;
-    description: string;
-    type: string;
-    size: string;
-}
-
-const Home: React.FC = () => {
+export default function Home() {
     return (
-        <>
-            <AppLayout
-                headerSelector="#top-nav"
-                ariaLabels={{
-                    navigation: 'Navigation drawer',
-                    navigationClose: 'Close navigation drawer',
-                    navigationToggle: 'Open navigation drawer',
-                    notifications: 'Notifications',
-                    tools: 'Help panel',
-                    toolsClose: 'Close help panel',
-                    toolsToggle: 'Open help panel',
-                }}
-                navigation={<Navigation />}
+            <Shell
                 breadcrumbs={<Breadcrumbs />}
-                content={
-                    <ContentLayout header={<Header variant="h1">Table</Header>}>
-                        <PreparedDashboardContent />
-                    </ContentLayout>
-                }
-            />
-        </>
+                navigation={<Navigation />}
+                tools={<HelpPanel header={<h2>Help panel</h2>} />}
+            >
+                <ContentLayout
+                    header={
+                        <Header variant="h1" info={<Link variant="info">Info</Link>}>
+                            Dashboard
+                        </Header>
+                    }
+                >
+                    <Grid gridDefinition={[{ colspan: 12 }, { colspan: 8 }, { colspan: 4 }]} disableGutters={false}>
+                        <ProductionOverview metrics={productionMetrics} />
+                        <Flavors data={variationData} items={breakdownItems} />
+                        <QualityReport quote={quote} notes={notes} />
+                    </Grid>
+                </ContentLayout>
+            </Shell>
 
     );
 };
-
-export default Home;

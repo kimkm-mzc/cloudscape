@@ -3,7 +3,8 @@ import BreadcrumbGroup, { BreadcrumbGroupProps } from '@cloudscape-design/compon
 
 const items: BreadcrumbGroupProps.Item[] = [
     { text: 'White Base Porject', href: '/home/index.html' },
-    { text: 'Table', href: '/home/index.html' },
+    { text: 'Dashboard', href: '/home/index.html' },
+    // { text: 'Flavors', href: '/flavors/index.html' },
 ];
 
 export interface BreadcrumbsProps {
