@@ -13,6 +13,7 @@ const loading = React.createElement('div', null, '화면을 불러오는 중 입
 // Containers
 const Home = React.lazy(() => import('./pages/home/Home'))
 const Flavors = React.lazy(() => import('./pages/flavors/Flavors'))
+
 // Pages
 const Page404 = React.lazy(() => import('./pages/page404/Page404'))
 const Page500 = React.lazy(() => import('./pages/page500/Page500'))
@@ -36,7 +37,7 @@ const App: React.FC = () => {
                 <Routes>
                     <Route path="/404" element={<Page404 />} />
                     <Route path="/500" element={<Page500 />} />
-                    <Route path="/home" element={<Home />} />
+                    <Route path="/*" element={<Home />} />
                     <Route path="/flavors" element={<Flavors />} />
                     
                 </Routes>
